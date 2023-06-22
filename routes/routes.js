@@ -4,11 +4,11 @@ const router = express.Router();
 const Model= require('../models/model');
 //Post method
 router.post('/post', async(req,res)=>{
-    const data = new Model({
+   
+ const data = new Model({
         name: req.body.name,
         age: req.body.age
     })
-
 try{
     const savedData = await data.save();
     res.status(201).json(savedData)
